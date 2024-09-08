@@ -1,0 +1,15 @@
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+}
+
+.item {
+  width: calc((100% - 24px) / 4);
+  padding: 8px;
+  border: 2px solid #373030;
+  border-radius: 20px;
+  background-color: #e3d9d9;
+}
