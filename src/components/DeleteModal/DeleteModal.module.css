@@ -1,0 +1,71 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding: 12px;
+}
+
+.descr {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fa0000;
+}
+
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.btnCancel {
+  min-width: 120px;
+  padding: 8px;
+  margin: 0 auto;
+  background-color: #1d5828;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fafafa;
+  transition: background-color 250ms ease-in-out;
+}
+
+.btnCancel:hover,
+.btnCancel:focus {
+  background-color: #14b33e;
+}
+
+.btnDelete {
+  min-width: 120px;
+  padding: 8px;
+  margin: 0 auto;
+  background-color: #6e1717;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fafafa;
+  transition: background-color 250ms ease-in-out;
+}
+
+.btnDelete:hover,
+.btnDelete:focus {
+  background-color: #e11717;
+}

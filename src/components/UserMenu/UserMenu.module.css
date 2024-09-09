@@ -1,0 +1,28 @@
+.userBlock {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.userName {
+  font-weight: 500;
+  font-size: 20px;
+  color: #241bc7;
+}
+
+.btn {
+  min-width: 90px;
+  padding: 8px;
+  margin: 0 auto;
+  background-color: #4c88b3;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fafafa;
+  transition: background-color 250ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #144776;
+}

@@ -9,7 +9,9 @@
 .item {
   width: calc((100% - 24px) / 4);
   padding: 8px;
-  border: 2px solid #373030;
+  border: 2px solid #16a61e;
   border-radius: 20px;
-  background-color: #e3d9d9;
+  background-color: #e2edd0;
+  color: #176ca9;
+  font-weight: 500;
 }

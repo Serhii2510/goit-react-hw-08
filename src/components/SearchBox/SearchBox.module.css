@@ -2,11 +2,12 @@
   display: flex;
   flex-direction: column;
   row-gap: 8px;
-  min-width: 300px;
+  min-width: 600px;
   padding: 20px;
-  border: 2px solid #1e1b1b;
+  border: 2px solid #16a61e;
   border-radius: 20px;
-  background-color: #fafafa;
+  color: #176ca9;
+  background-color: #e2edd0;
 }
 
 .label {
@@ -17,8 +18,9 @@
 .input {
   padding: 8px;
   font-size: 16px;
-  border: 2px solid #928d8d;
+  border: 2px solid #16a61e;
   border-radius: 8px;
+  color: #363aaf;
   background-color: transparent;
   outline: transparent;
   transition: border-color 250ms ease-in-out;

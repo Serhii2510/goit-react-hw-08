@@ -38,7 +38,8 @@ input::placeholder {
   border-color: #363aaf;
 }
 
-.error {
+.error,
+.errorText {
   text-align: center;
   color: #fa0000;
 }
