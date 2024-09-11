@@ -49,7 +49,8 @@ const LoginForm = () => {
   };
 
   return (
-    <Formik
+    <>
+      <Formik
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={LoginValidationSchema}
@@ -95,6 +96,8 @@ const LoginForm = () => {
       </Form>
     </Formik>
     <Toaster />
+    </>
+    
   );
 };
 
