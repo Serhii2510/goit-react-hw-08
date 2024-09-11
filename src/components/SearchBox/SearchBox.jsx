@@ -8,8 +8,6 @@ const SearchBox = () => {
 
   const onFilter = e => {
     const value = e.target.value;
-    console.log(value);
-
     dispatch(changeFilter(value));
   };
 

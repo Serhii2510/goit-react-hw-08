@@ -4,10 +4,19 @@ import { selectAuthError } from '../../redux/auth/selectors';
 
 import { ErrorMessage, Field, Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import css from './LoginForm.module.css';
 import toast, { Toaster } from 'react-hot-toast';
+import { useState } from 'react';
+import { FaEye } from 'react-icons/fa';
+import { FaEyeSlash } from 'react-icons/fa';
+
+import css from './LoginForm.module.css';
 
 const LoginForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleToggle = () => {
+    setShowPassword(!showPassword);
+  };
   const LoginValidationSchema = Yup.object().shape({
     email: Yup.string()
       .email('Must be a valid email!')
@@ -30,13 +39,9 @@ const LoginForm = () => {
     dispatch(apiLogin(values))
       .unwrap()
       .then(() => {
-        console.log('success');
-
         toast.success('Successfully logged in! 👌');
       })
       .catch(error => {
-        console.log('error');
-
         toast.error(`Oops, some error occured... ${error}`);
       });
 
@@ -63,12 +68,17 @@ const LoginForm = () => {
 
         <label className={css.label}>
           <span>Password</span>
-          <Field
-            className={css.input}
-            type="password"
-            name="password"
-            placeholder="Enter your password"
-          />
+          <div className={css.inputWrapper}>
+            <Field
+              className={css.input}
+              type={showPassword ? 'text' : 'password'}
+              name="password"
+              placeholder="Enter your password"
+            />
+            <span className={css.btnToggle} onClick={handleToggle}>
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
           <ErrorMessage
             className={css.error}
             name="password"

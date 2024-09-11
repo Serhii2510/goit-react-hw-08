@@ -4,9 +4,19 @@ import { selectAuthError } from '../../redux/auth/selectors';
 
 import { ErrorMessage, Field, Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { useState } from 'react';
+import { FaEye } from 'react-icons/fa';
+import { FaEyeSlash } from 'react-icons/fa';
+
 import css from './RegistrationForm.module.css';
 
 const RegistrationForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleToggle = () => {
+    setShowPassword(!showPassword);
+  };
+
   const RegistrationValidationSchema = Yup.object().shape({
     name: Yup.string()
       .min(3, 'Too Short! Please type your name')
@@ -67,12 +77,17 @@ const RegistrationForm = () => {
 
         <label className={css.label}>
           <span>Password</span>
-          <Field
-            className={css.input}
-            type="password"
-            name="password"
-            placeholder="Enter your password"
-          />
+          <div className={css.inputWrapper}>
+            <Field
+              className={css.input}
+              type={showPassword ? 'text' : 'password'}
+              name="password"
+              placeholder="Enter your password"
+            />
+            <span className={css.btnToggle} onClick={handleToggle}>
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
           <ErrorMessage
             className={css.error}
             name="password"

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addContact, deleteContact, fetchContacts } from "./operations";
+import { addContact, deleteContact, fetchContacts, patchContact } from "./operations";
 import { apiLogout } from "../auth/operations";
 
 
@@ -43,6 +43,16 @@ const contactsSlice = createSlice({
                 );
             })
             .addCase(deleteContact.rejected, handleRejected)
+            .addCase(patchContact.pending, handlePending)
+            .addCase(patchContact.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = null;
+                const updatedContact = action.payload;
+                state.contacts = state.contacts.map(contact =>
+                    contact.id === updatedContact.id ? updatedContact : contact
+                );
+            })
+            .addCase(patchContact.rejected, handleRejected)
             .addCase(apiLogout.fulfilled, (state) => {
                 state.contacts = [];
                 state.error = null;

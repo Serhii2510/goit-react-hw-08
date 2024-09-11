@@ -21,17 +21,38 @@
   align-items: center;
 }
 
-.btn {
-  min-width: 60px;
-  padding: 8px;
-  background-color: #4c88b3;
+.btnBlock {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.btnUpdate {
+  padding: 4px;
+  background-color: #dc9c1b;
   border: none;
   border-radius: 8px;
   font-size: 16px;
+  line-height: 1;
   color: #fafafa;
 }
 
-.btn:hover,
-.btn:focus {
-  background-color: #144776;
+.btnUpdate:hover,
+.btnUpdate:focus {
+  background-color: #dcb15d;
+}
+
+.btnDelete {
+  padding: 4px;
+  background-color: #ff0000;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1;
+  color: #fafafa;
+}
+
+.btnDelete:hover,
+.btnDelete:focus {
+  background-color: #fa4d4d;
 }
