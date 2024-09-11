@@ -39,7 +39,9 @@ const LoginForm = () => {
     dispatch(apiLogin(values))
       .unwrap()
       .then(() => {
-        toast.success('Successfully logged in! 👌');
+        toast.success('Successfully logged in! 👌', {
+    duration: 6000,
+  });
       })
       .catch(error => {
         toast.error(`Oops, some error occured... ${error}`);
