@@ -92,8 +92,8 @@ const LoginForm = () => {
         {error && (
           <p className={css.errorText}>Oops, some error occured... {error}</p>
         )}
-        <Toaster />
       </Form>
+      <Toaster />
     </Formik>
   );
 };
